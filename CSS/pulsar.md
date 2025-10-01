@@ -40,7 +40,7 @@ function randomGradientWithStop() {
 }
 ```
 
-That wasn't much better. Taking a closer look, I realized that all of the gradients in the original pulsar were the same. That would help clean up the JavaScript. One quick trip to the (Ultimate CSS Gradient Generator)[] and I had the CSS I needed.
+That wasn't much better. Taking a closer look, I realized that all of the gradients in the original pulsar were the same. That would help clean up the JavaScript. One quick trip to the (Ultimate CSS Gradient Generator)[https://www.colorzilla.com/gradient-editor/] and I had the CSS I needed.
 
 ```
 .gradient {
