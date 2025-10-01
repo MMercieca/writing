@@ -115,7 +115,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
        fromConnection:(AVCaptureConnection *)connection
 ```
 
-<bAnd a Note on a Hack</b>
+**And a Note on a Hack**
 
 I had a problem getting the sample buffer to be consistent. The first time I started recording I’d get 4096 samples, and all subsequent times I’d get 1024. For consistency I implemented a bit of a hack.
 
