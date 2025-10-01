@@ -44,7 +44,7 @@ A.imagp = (float *) malloc(halfSamples * sizeof(float));
       
 // Pack samples:
 vDSP_ctoz((COMPLEX*)samples, 2, &A, 1, numSamples/2);
-'''
+```
 
 `vDSP_fft_zrip` is an in place function, so the number of frequency ranges is exactly the same as the number of samples fed in, which works best if everything is a power of two. The iPhone takes 44,100 samples per second and 1024 is a nice power of two. So for 1/43 of a second I can identify the 43 Hz bucket that has the strongest frequency. Not good enough for a tuner, but good enough to communicate. If I wanted a greater resolution I could just take more samples. For this proof of concept, a 43 Hz resolution is enough.
 
