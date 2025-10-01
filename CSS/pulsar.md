@@ -20,9 +20,9 @@ function randomGadient() {
 }
 ```
 
-The results are:
+The results are ([jsfiddle](https://jsfiddle.net/oxzaht0d/)):
 
-
+![2025-10-01_10-25-39 (1)](https://github.com/user-attachments/assets/2d0ac5e5-fca3-4da9-af1b-d5a1a00ce217)
 
 That's not what I was expecting.
 
@@ -39,8 +39,11 @@ function randomGradientWithStop() {
    demo2.style.cssText = style;
 }
 ```
+([jsfiddle](https://jsfiddle.net/tp20cguL/))
 
-That wasn't much better. Taking a closer look, I realized that all of the gradients in the original pulsar were the same. That would help clean up the JavaScript. One quick trip to the (Ultimate CSS Gradient Generator)[https://www.colorzilla.com/gradient-editor/] and I had the CSS I needed.
+![2025-10-01_10-26-24 (2)](https://github.com/user-attachments/assets/2fbd0208-07f1-4d9a-b55f-ad661b06b412)
+
+That wasn't much better. Taking a closer look, I realized that all of the gradients in the original pulsar were the same. That would help clean up the JavaScript. One quick trip to the [Ultimate CSS Gradient Generator](https://www.colorzilla.com/gradient-editor/) and I had the CSS I needed.
 
 ```
 .gradient {
@@ -54,6 +57,8 @@ That wasn't much better. Taking a closer look, I realized that all of the gradie
    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0c0c', endColorstr='#1e2dff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 ```
+
+<img width="320" height="320" alt="2025-10-01_10-26-50" src="https://github.com/user-attachments/assets/b7dab24e-3625-40cd-a4b1-71be480b63be" />
 
 That was not the first or last time I would make something more complicated than it needed to be.
 
@@ -79,6 +84,9 @@ function rotateX(id) {
    rotate.style.cssText += ";transform: rotateX(" + rotateDemoX + "deg);-webkit-transform: rotateX(" + rotateDemoX  + "deg);";
 }
 ```
+([jsfiddle](https://jsfiddle.net/vnLdos8p/))
+
+![2025-10-01_10-34-16 (1)](https://github.com/user-attachments/assets/f4649e41-0efb-4885-817b-b27d7d60433c)
 
 ### Repeat
 
@@ -137,6 +145,10 @@ function setupDemo3() {
    }
 }
 ```
+([jsfiddle](https://jsfiddle.net/mxtLr6gq/))
+
+![2025-10-01_10-35-16 (1)](https://github.com/user-attachments/assets/32ac1477-e354-4722-99ee-044df0c95bfd)
+
 
 ## What Did I Learn?
 
