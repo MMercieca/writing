@@ -44,16 +44,22 @@ A.imagp = (float *) malloc(halfSamples * sizeof(float));
       
 // Pack samples:
 vDSP_ctoz((COMPLEX*)samples, 2, &A, 1, numSamples/2);
-vDSP_fft_zrip is an in place function, so the number of frequency ranges is exactly the same as the number of samples fed in, which works best if everything is a power of two. The iPhone takes 44,100 samples per second and 1024 is a nice power of two. So for 1/43 of a second I can identify the 43 Hz bucket that has the strongest frequency. Not good enough for a tuner, but good enough to communicate. If I wanted a greater resolution I could just take more samples. For this proof of concept, a 43 Hz resolution is enough.
+'''
 
+`vDSP_fft_zrip` is an in place function, so the number of frequency ranges is exactly the same as the number of samples fed in, which works best if everything is a power of two. The iPhone takes 44,100 samples per second and 1024 is a nice power of two. So for 1/43 of a second I can identify the 43 Hz bucket that has the strongest frequency. Not good enough for a tuner, but good enough to communicate. If I wanted a greater resolution I could just take more samples. For this proof of concept, a 43 Hz resolution is enough.
+
+```
 // Setup the FFT
 // 1. Setup the radix (exponent)
 int fftRadix = log2(numSamples);
 int halfSamples = (int)(numSamples / 2);
 // 2. And setup the FFT
 FFTSetup setup = vDSP_create_fftsetup(fftRadix, FFT_RADIX2);
+```
+
 And at the heart of the function, perform the fast Fourier transform.
 
+```
 // Perform a forward FFT using fftSetup and A
 // Results are returned in A
 vDSP_fft_zrip(setup, &A, 1, fftRadix, FFT_FORWARD);
